@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AS Hotels | Reservas de hotel</title>
+    <meta
+      name="description"
+      content="Reserve hoteis com conforto, clareza e atendimento premium na AS Hotels."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="AS Hotels - pagina inicial">
+        <span class="brand-mark">AS</span>
+        <span>AS Hotels</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegacao principal">
+        <a href="#hoteis">Hoteis</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#experiencias">Experiencias</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="ghost-button" type="button">Entrar</button>
+        <button class="primary-button compact" type="button">Criar conta</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">Reservas premium sem complicacao</p>
+            <h1 id="hero-title">AS Hotels</h1>
+            <p>
+              Encontre estadias selecionadas para trabalho, lazer e escapadas de
+              fim de semana com confirmacao rapida.
+            </p>
+          </div>
+
+          <form class="booking-panel" id="bookingForm">
+            <label class="field wide">
+              <span>Destino</span>
+              <span class="input-shell">
+                <i data-lucide="map-pin"></i>
+                <input
+                  id="destination"
+                  name="destination"
+                  type="text"
+                  value="Lisboa, Portugal"
+                  autocomplete="off"
+                />
+              </span>
+            </label>
+
+            <label class="field">
+              <span>Check-in</span>
+              <span class="input-shell">
+                <i data-lucide="calendar-days"></i>
+                <input id="checkin" name="checkin" type="date" />
+              </span>
+            </label>
+
+            <label class="field">
+              <span>Check-out</span>
+              <span class="input-shell">
+                <i data-lucide="calendar-check"></i>
+                <input id="checkout" name="checkout" type="date" />
+              </span>
+            </label>
+
+            <label class="field">
+              <span>Hospedes</span>
+              <span class="input-shell">
+                <i data-lucide="users-round"></i>
+                <select id="guests" name="guests">
+                  <option value="1">1 hospede</option>
+                  <option value="2" selected>2 hospedes</option>
+                  <option value="3">3 hospedes</option>
+                  <option value="4">4 hospedes</option>
+                  <option value="5">5+ hospedes</option>
+                </select>
+              </span>
+            </label>
+
+            <button class="primary-button search-button" type="submit">
+              <i data-lucide="search"></i>
+              Buscar estadias
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Destaques da AS Hotels">
+        <div>
+          <strong>4.9/5</strong>
+          <span>Avaliacao media</span>
+        </div>
+        <div>
+          <strong>24h</strong>
+          <span>Suporte ao viajante</span>
+        </div>
+        <div>
+          <strong>1.240+</strong>
+          <span>Reservas este mes</span>
+        </div>
+        <div>
+          <strong>0 EUR</strong>
+          <span>Taxa de cancelamento flexivel</span>
+        </div>
+      </section>
+
+      <section class="section-shell results-layout" id="hoteis">
+        <aside class="filters" aria-label="Filtros de busca">
+          <div class="section-heading compact-heading">
+            <p class="eyebrow">Filtros</p>
+            <h2>Refine sua estadia</h2>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Preco por noite</span>
+            <input
+              id="priceRange"
+              type="range"
+              min="90"
+              max="520"
+              value="320"
+              step="10"
+            />
+            <div class="range-row">
+              <span>90 EUR</span>
+              <strong id="priceValue">ate 320 EUR</strong>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Tipo de viagem</span>
+            <div class="segmented-control" role="group" aria-label="Tipo de viagem">
+              <button class="active" type="button" data-trip="Todos">Todos</button>
+              <button type="button" data-trip="Trabalho">Trabalho</button>
+              <button type="button" data-trip="Lazer">Lazer</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-label">Comodidades</span>
+            <label class="check-row">
+              <input type="checkbox" checked />
+              <span>Pequeno-almoco incluido</span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" checked />
+              <span>Wi-Fi de alta velocidade</span>
+            </label>
+            <label class="check-row">
+              <input type="checkbox" />
+              <span>Spa e bem-estar</span>
+            </label>
+          </div>
+        </aside>
+
+        <div class="results">
+          <div class="section-heading results-heading">
+            <div>
+              <p class="eyebrow">Disponivel agora</p>
+              <h2>Hoteis recomendados</h2>
+            </div>
+            <div class="sort-control">
+              <label for="sortHotels">Ordenar</label>
+              <select id="sortHotels">
+                <option value="recommended">Recomendados</option>
+                <option value="price">Menor preco</option>
+                <option value="rating">Melhor avaliacao</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="hotel-grid" id="hotelGrid"></div>
+        </div>
+      </section>
+
+      <section class="section-shell split-section" id="ofertas">
+        <div class="offer-copy">
+          <p class="eyebrow">Oferta selecionada</p>
+          <h2>Upgrade de quarto em estadias de 3 noites</h2>
+          <p>
+            Reserve suites selecionadas pela AS Hotels e receba prioridade de
+            check-in, late checkout e credito para restaurante.
+          </p>
+          <button class="secondary-button" type="button">
+            <i data-lucide="sparkles"></i>
+            Ver oferta
+          </button>
+        </div>
+        <div class="offer-image" role="img" aria-label="Suite luminosa de hotel"></div>
+      </section>
+
+      <section class="section-shell experience-section" id="experiencias">
+        <div class="section-heading centered">
+          <p class="eyebrow">Experiencias</p>
+          <h2>Viaje com detalhes que fazem diferenca</h2>
+        </div>
+
+        <div class="experience-grid">
+          <article>
+            <i data-lucide="concierge-bell"></i>
+            <h3>Atendimento dedicado</h3>
+            <p>Equipe pronta para ajustar sua estadia antes, durante e depois da viagem.</p>
+          </article>
+          <article>
+            <i data-lucide="shield-check"></i>
+            <h3>Reservas seguras</h3>
+            <p>Politicas claras, pagamento protegido e confirmacao instantanea.</p>
+          </article>
+          <article>
+            <i data-lucide="badge-percent"></i>
+            <h3>Beneficios exclusivos</h3>
+            <p>Ofertas selecionadas em hoteis urbanos, resorts e estadias boutique.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand" href="#" aria-label="AS Hotels">
+          <span class="brand-mark">AS</span>
+          <span>AS Hotels</span>
+        </a>
+        <p>Reservas inteligentes para estadias memoraveis.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacidade</a>
+        <a href="#">Termos</a>
+        <a href="#">Contacto</a>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      Busca atualizada para Lisboa, Portugal
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
